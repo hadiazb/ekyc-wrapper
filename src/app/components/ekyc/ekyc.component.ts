@@ -42,6 +42,7 @@ export class EkycComponent implements OnInit, OnDestroy {
 
   endSuccessEvent() {
     window.addEventListener('wcEkycSuccess', (event: any) => {
+      this.setToken('wcEkycSuccess  ' + event.detail.sessionId);
       if (event?.detail?.sessionId) {
         this.router.navigateByUrl('end');
       }
@@ -50,9 +51,14 @@ export class EkycComponent implements OnInit, OnDestroy {
 
   endFailedEvent() {
     window.addEventListener('wcEkycFailed', (event: any) => {
+      this.setToken('wcEkycFailed  ' + event.detail.sessionId);
       if (event?.detail?.sessionId) {
         this.router.navigateByUrl('end');
       }
     });
+  }
+
+  setToken(message: string) {
+    localStorage.setItem('message', message);
   }
 }
