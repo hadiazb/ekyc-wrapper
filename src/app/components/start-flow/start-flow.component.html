@@ -1,0 +1,16 @@
+<div class="start">
+  <h1 class="start_title">Host</h1>
+  <form class="start_form" (submit)="onRedirect()" [formGroup]="form">
+    <label class="start_form_label" for="idToken">Set IdToken</label>
+    <textarea
+      class="start_form_textarea"
+      name="idToken"
+      formControlName="idToken"
+      placeholder="Set IdToken"
+      type="text"
+    ></textarea>
+    <button type="submit" [disabled]="!form.valid" class="start_form_button">
+      Start
+    </button>
+  </form>
+</div>

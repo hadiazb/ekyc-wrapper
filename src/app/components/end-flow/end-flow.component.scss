@@ -1,0 +1,17 @@
+.end {
+  height: 100vh;
+  padding: 16px;
+  background-color: #00377d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .end_title {
+    color: white;
+  }
+
+  .end_subtitle {
+    color: white;
+  }
+}
